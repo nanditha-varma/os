@@ -1,0 +1,94 @@
+Gedit file_name.sh
+Chmod +x file_name.sh
+./file_name.sh
+---------------
+#reverse of number
+echo "enter values a "
+read a 
+rev=0
+while [ $a -gt 0 ]
+do
+t=$(($a%10))
+rev=$(($rev*10+$t))
+a=$((a/10))
+done
+echo $rev
+--------------------
+#palidrome
+echo "enter values a "
+read a 
+rev=0
+d=$a
+while [ $a -gt 0 ]
+do
+t=$(($a%10))
+rev=$(($rev*10+$t))
+a=$((a/10))
+done
+echo $rev
+if [ $rev -eq $d ]
+then
+echo "palindrome"
+else
+echo "Not palindrome"
+fi
+--------------------
+#armstrong
+echo "enter values a "
+read a 
+rev=0
+d=$a
+while [ $a -gt 0 ]
+do
+t=$(($a%10))
+rev=$(($rev+$t*$t*$t))
+a=$((a/10))
+done
+echo $rev
+if [ $rev -eq $d ]
+then
+echo "armstrong"
+else
+echo "Not armstrong"
+fi
+--------------------
+#mul table
+echo "enter values a "
+read a 
+for i in {1..10}
+do
+echo "$a X $i=$(($a*$i))"
+done
+-------------
+#decimal to binary
+echo "enter values a "
+read a 
+bin_num=0
+pos=1
+while [ $a -gt 0 ]
+do
+rem=$(($a%2))
+bin_num=$(($bin_num+$rem*pos))
+pos=$(($pos*10))
+a=$(($a/2))
+done
+echo $bin_num
+----------------
+#binary to decimal
+echo "enter binary number  "
+read a 
+decimal=0
+pos=1
+base=1
+len=${#a}
+  
+while [ $len -gt 0 ]
+do
+digit=${a:len-1:1}
+decimal=$((decimal + digit * base))
+base=$((base * 2))
+len=$((len - 1))
+done
+echo $decimal
+---------------
+
